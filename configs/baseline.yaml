@@ -1,0 +1,30 @@
+normalization:
+  maximum_contact_age_s: 15.0
+  maximum_position_age_s: 15.0
+  maximum_ground_speed_mps: 400.0
+  maximum_vertical_rate_mps: 100.0
+  remove_ground_states: true
+  require_fresh_contact: true
+  require_fresh_position: true
+  deduplicate_aircraft_timestamps: true
+
+trajectories:
+  maximum_gap_s: 120.0
+  maximum_implied_speed_mps: 450.0
+  minimum_points: 6
+  boundary_tolerance_s: 10.0
+
+split:
+  train_fraction: 0.70
+  validation_fraction: 0.15
+  test_fraction: 0.15
+  random_seed: 42
+
+windows:
+  history_seconds: 120
+  prediction_horizon_seconds: 10
+  sample_interval_seconds: 10
+  interval_tolerance_seconds: 1.0
+
+baseline:
+  horizons_s: [10, 20, 30, 60]
